@@ -1,5 +1,7 @@
 # healtchex
 
+[![Build Status](https://travis-ci.org/KamilLelonek/healtchex.svg?branch=master)](https://travis-ci.org/KamilLelonek/healtchex)
+
 Kubernetes Liveness and Readiness Probes as Elixir Plugs.
 
 ## Installation
