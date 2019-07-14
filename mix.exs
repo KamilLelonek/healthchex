@@ -1,9 +1,9 @@
-defmodule Healtchex.MixProject do
+defmodule Healthchex.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :healtchex,
+      app: :healthchex,
       version: "0.1.0",
       elixir: "~> 1.8",
       build_embedded: Mix.env() == :prod,
@@ -33,7 +33,7 @@ defmodule Healtchex.MixProject do
   defp package do
     [
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => "https://github.com/KamilLelonek/healtchex"}
+      links: %{"GitHub" => "https://github.com/KamilLelonek/healthchex"}
     ]
   end
 end
