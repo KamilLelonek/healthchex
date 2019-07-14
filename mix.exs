@@ -22,7 +22,8 @@ defmodule Healtchex.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.14", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false},
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 
