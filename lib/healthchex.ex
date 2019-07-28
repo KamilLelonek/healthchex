@@ -1,2 +1,2 @@
-defmodule Healtchex do
+defmodule Healthchex do
 end
