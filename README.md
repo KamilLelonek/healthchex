@@ -22,21 +22,23 @@ To keep the documentation up to date, I decided to not duplicate it here, but in
 
 Have a look at [`test/probes`](./test/probes) directory to see how you can use these Plugs.
 
-    defmodule MyApp.Router do
-      use Phoenix.Router
+```elixir
+defmodule MyApp.Router do
+  use Phoenix.Router
 
-      forward "/alive", Healthchex.Probes.Liveness
-      forward(
-        "/ready",
-        Healthchex.Probes.Readiness,
-        probe: &Domain.db_ready?/0
-      )
+  forward "/alive", Healthchex.Probes.Liveness
+  forward(
+    "/ready",
+    Healthchex.Probes.Readiness,
+    probe: &Domain.db_ready?/0
+  )
 
-      pipeline :api do
-        plug :accepts, ["json"]
-      end
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
 
-      scope "/api", MyApp do
-        pipe_through :api
-      end
-    end
+  scope "/api", MyApp do
+    pipe_through :api
+  end
+end
+```
