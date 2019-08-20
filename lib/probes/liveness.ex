@@ -1,13 +1,10 @@
 defmodule Healthchex.Probes.Liveness do
   import Plug.Conn
 
-  @default_path Application.get_env(:healthchex, :liveness_path, "/health/live")
-  @default_resp Application.get_env(:healthchex, :liveness_response, "OK")
-
   def init(opts) do
     %{
-      path: Keyword.get(opts, :path, @default_path),
-      resp: Keyword.get(opts, :resp, @default_resp)
+      path: Keyword.get(opts, :path, default_path()),
+      resp: Keyword.get(opts, :resp, default_resp())
     }
   end
 
@@ -18,4 +15,7 @@ defmodule Healthchex.Probes.Liveness do
   end
 
   def call(conn, _opts), do: conn
+
+  defp default_path, do: Application.get_env(:healthchex, :liveness_path, "/health/live")
+  defp default_resp, do: Application.get_env(:healthchex, :liveness_response, "OK")
 end
