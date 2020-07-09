@@ -48,11 +48,7 @@ defmodule MyApp.Router do
   use Phoenix.Router
 
   forward "/health/live", Healthchex.Probes.Liveness
-  forward(
-    "/health/ready",
-    Healthchex.Probes.Readiness,
-    probe: &Domain.db_ready?/0
-  )
+  forward "/health/ready", Healthchex.Probes.Readiness, probe: &Domain.db_ready?/0
 
   pipeline :api do
     plug :accepts, ["json"]
