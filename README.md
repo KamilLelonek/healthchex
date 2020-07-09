@@ -26,12 +26,8 @@ Have a look at [`test/probes`](./test/probes) directory to see how you can use t
 defmodule MyApp.Router do
   use Phoenix.Router
 
-  forward "/alive", Healthchex.Probes.Liveness
-  forward(
-    "/ready",
-    Healthchex.Probes.Readiness,
-    probe: &Domain.db_ready?/0
-  )
+  forward "/health/live", Healthchex.Probes.Liveness
+  forward "/health/ready", Healthchex.Probes.Readiness
 
   pipeline :api do
     plug :accepts, ["json"]
