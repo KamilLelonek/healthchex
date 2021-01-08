@@ -6,12 +6,12 @@ Kubernetes Liveness and Readiness Probes as Elixir Plugs.
 
 ## Installation
 
-The package can be installed by adding `healthchex` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `healthchex` to your list of dependencies in [`mix.exs`](mix.exs):
 
 ```elixir
 def deps do
   [
-    {:healthchex, "~> x.x.x"}
+    {:healthchex, "~> 0.2"}
   ]
 end
 ```
@@ -28,8 +28,8 @@ Have a look at [`test/probes`](./test/probes) directory to see how you can use t
 defmodule MyApp.Router do
   use Phoenix.Router
 
-  forward "/health/live", Healthchex.Probes.Liveness
-  forward "/health/ready", Healthchex.Probes.Readiness
+  forward("/health/live", Healthchex.Probes.Liveness)
+  forward("/health/ready", Healthchex.Probes.Readiness)
 
   pipeline :api do
     plug :accepts, ["json"]
