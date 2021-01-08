@@ -4,8 +4,8 @@ defmodule Healthchex.MixProject do
   def project do
     [
       app: :healthchex,
-      version: "0.2.0",
-      elixir: "~> 1.9",
+      version: "0.2.1",
+      elixir: "~> 1.11",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -22,8 +22,8 @@ defmodule Healthchex.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.14", only: :dev, runtime: false},
-      {:plug_cowboy, "~> 2.0"}
+      {:ex_doc, "~> 0.23", only: :dev, runtime: false},
+      {:plug_cowboy, "~> 2.4"}
     ]
   end
 
